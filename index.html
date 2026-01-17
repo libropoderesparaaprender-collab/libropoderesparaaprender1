@@ -4,12 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Poderes Para Aprender - Gregorio Gómez Pérez</title>
-     <div class="images-footer">
-        <div class="img-small">
-            <img src="portada.jpg" alt="Portada Poderes Para Aprender"  alt="Gregorio Gómez Pérez">
-            <p><small>Libro I</small></p>
-        </div>
-   
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -35,6 +29,7 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
         h1, h2, h3 { color: #2c3e50; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        
         .tetralogia-section {
             background: #f1f4f6;
             padding: 20px;
@@ -53,41 +48,63 @@
             border-radius: 8px;
             background: #fff;
         }
-        .proximos-libros {
-            margin-top: 30px;
-        }
-        .images-footer {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
+
+        /* Sección de Fotos y Autor */
+        .footer-content {
             margin-top: 50px;
             padding-top: 20px;
             border-top: 1px solid #eee;
-            flex-wrap: wrap;
         }
-        .img-small {
+
+        .portada-destacada {
             text-align: center;
-            max-width: 180px; /* Tamaño reducido */
+            margin-bottom: 40px;
         }
-        img {
-            max-width: 100%;
+
+        .portada-destacada img {
+            max-width: 350px; /* Portada más grande */
+            width: 100%;
             height: auto;
-            border-radius: 4px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
+
+        .autor-section {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            background: #fdfdfd;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .autor-section img {
+            max-width: 150px; /* Foto de cara pequeña */
+            border-radius: 50%; /* Opcional: cara redonda */
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .autor-texto {
+            flex: 1;
+            min-width: 250px;
+        }
+
         .footer-text {
             text-align: center;
-            margin-top: 20px;
+            margin-top: 40px;
             font-size: 0.85em;
             color: #95a5a6;
         }
+
+        strong { color: #2980b9; }
     </style>
 </head>
 <body>
 
 <header>
     <h1>Poderes Para Aprender (P.P.A.)</h1>
-    <p>La Primera Tetralogía   "Poderes Para Aprender"</p>
+    <p>La Primera Tetralogía "Poderes Para Aprender"</p>
 </header>
 
 <div class="container">
@@ -101,9 +118,7 @@
     </section>
 
     <section>
-        <h2>Libro 1-1º Tetralogía: Efectos para el Alumno (Obra Actual)</h2>
-        <p>En este primer volumen presentamos los 6 efectos iniciales diseñados para empoderar a quien aprende:</p>
-        
+        <h2>Libro 1 - 1º Tetralogía: Efectos para el Alumno (Obra Actual)</h2>
         <div class="efectos-grid">
             <div class="efecto-card">
                 <h3>1. Efecto Concierto</h3>
@@ -132,55 +147,40 @@
         </div>
     </section>
 
-    <section class="proximos-libros    -2º Tetralogía, 3º Tetralogía  y 4º Tetralogía">
+    <section class="proximos-libros">
         <h2>Próximas Entregas: Los 14 Efectos Restantes</h2>
-        <p>La tetralogía continuará con la enumeración y desarrollo de los siguientes bloques:</p>
-        
         <div class="tetralogia-section">
-            <h3>Libro 2 -Tetralogía 2ª : Poderes Para el Profesorado (4 Efectos)</h3>
+            <h3>Libro 2 - Tetralogía 2ª: Poderes Para el Profesorado</h3>
             <ul>
-                <li>Efecto Vehemencia</li>
-                <li>Efecto OVillo</li>
-                <li>Efecto Oratoria</li>
-                <li>Efecto Continente-Contenido</li>
-                
+                <li>Efecto Vehemencia, Efecto Ovillo, Efecto Oratoria, Efecto Continente-Contenido.</li>
             </ul>
 
-            <h3>Libro 3  -  Tetralogía 3 ª : Poderes Para el centro educativo ( 5 Efectos)</h3>
+            <h3>Libro 3 - Tetralogía 3ª: Poderes Para el Centro Educativo</h3>
             <ul>
-                <li>Efecto Gracias</li>
-                <li>Efecto Premio</li>
-                <li>Efecto Secundaria</li>
-                <li>Efecto Equipo</li>
-                <li>Efecto Habas</li>
-
+                <li>Efecto Gracias, Efecto Premio, Efecto Secundaria, Efecto Equipo, Efecto Habas.</li>
             </ul>
 
-            <h3>Libro 4  - Tetralogía   4ª  : Poderes Para la Sociedad (5 Efectos)</h3>
+            <h3>Libro 4 - Tetralogía 4ª: Poderes Para la Sociedad</h3>
             <ul>
-                <li>Efecto Donuts</li>
-                <li>Efecto Pasado</li>
-                <li>Efecto Juventud Acumulada</li>
-                <li>Efecto Sociedad</li>
-                <li>Efecto Empresa</li>
-
-
-
-                  <li> Ingeniero y Profesor de Educación Secundaria. Con "Poderes para aprender", Gregorio inaugura una Tetralogía pensada para quienes creen que aprender es un camino que nunca termina.
-</li>
+                <li>Efecto Donuts, Efecto Pasado, Efecto Juventud Acumulada, Efecto Sociedad, Efecto Empresa.</li>
             </ul>
         </div>
     </section>
 
-        <div class="img-small">
-            <img src="cara..jpg" alt="Autor Gregorio Gómez Pérez,   ,
-">
-            <p><small>Autor</small></p>
+    <div class="footer-content">
+        
+        <div class="portada-destacada">
+            <img src="portada.jpg" alt="Portada Poderes Para Aprender">
+            <p><strong>Libro I: Alumnos</strong></p>
         </div>
-    <ul>
-              
-                
-            </ul>
+
+        <div class="autor-section">
+            <img src="cara..jpg" alt="Gregorio Gómez Pérez">
+            <div class="autor-texto">
+                <p><strong>Gregorio Gómez Pérez</strong>, Ingeniero Técnico Industrial y Funcionario de carrera del Cuerpo de Profesores de Educación Secundaria.</p>
+                <p><small>Con "Poderes para aprender", Gregorio inaugura una Tetralogía pensada para quienes creen que aprender es un camino que nunca termina.</small></p>
+            </div>
+        </div>
     </div>
 
     <div class="footer-text">
