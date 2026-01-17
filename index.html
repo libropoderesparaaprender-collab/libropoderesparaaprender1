@@ -20,7 +20,7 @@
             background: #2c3e50;
             color: white;
             border-radius: 8px;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
         .container {
             background: white;
@@ -29,13 +29,20 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
         h1, h2, h3 { color: #2c3e50; border-bottom: 2px solid #eee; padding-bottom: 10px; }
-        
-        .tetralogia-section {
-            background: #f1f4f6;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
+
+        /* Portada al principio */
+        .portada-superior {
+            text-align: center;
+            margin-bottom: 40px;
         }
+        .portada-superior img {
+            max-width: 450px; /* Tamaño grande para la portada principal */
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
         .efectos-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -48,55 +55,40 @@
             border-radius: 8px;
             background: #fff;
         }
-
-        /* Sección de Fotos y Autor */
-        .footer-content {
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-        }
-
-        .portada-destacada {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .portada-destacada img {
-            max-width: 350px; /* Portada más grande */
-            width: 100%;
-            height: auto;
+        .tetralogia-section {
+            background: #f1f4f6;
+            padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            margin: 20px 0;
         }
 
+        /* Sección del Autor al final */
         .autor-section {
             display: flex;
             align-items: center;
             gap: 25px;
             flex-wrap: wrap;
             background: #fdfdfd;
-            padding: 20px;
+            padding: 25px;
             border-radius: 8px;
+            border-top: 2px solid #eee;
+            margin-top: 50px;
         }
-
         .autor-section img {
-            max-width: 150px; /* Foto de cara pequeña */
-            border-radius: 50%; /* Opcional: cara redonda */
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            max-width: 160px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
-
         .autor-texto {
             flex: 1;
-            min-width: 250px;
+            min-width: 280px;
         }
-
         .footer-text {
             text-align: center;
-            margin-top: 40px;
+            margin-top: 30px;
             font-size: 0.85em;
             color: #95a5a6;
         }
-
         strong { color: #2980b9; }
     </style>
 </head>
@@ -108,7 +100,12 @@
 </header>
 
 <div class="container">
-    
+
+    <div class="portada-superior">
+        <img src="portada.jpg" alt="Portada Poderes Para Aprender">
+        <p><strong>Libro I: Alumnos - Gimnasia para tu cerebro</strong></p>
+    </div>
+
     <section>
         <h2>El Comienzo de la Tetralogía</h2>
         <p>
@@ -118,7 +115,7 @@
     </section>
 
     <section>
-        <h2>Libro 1 - 1º Tetralogía: Efectos para el Alumno (Obra Actual)</h2>
+        <h2>Libro 1: Efectos para el Alumno</h2>
         <div class="efectos-grid">
             <div class="efecto-card">
                 <h3>1. Efecto Concierto</h3>
@@ -147,39 +144,26 @@
         </div>
     </section>
 
-    <section class="proximos-libros">
-        <h2>Próximas Entregas: Los 14 Efectos Restantes</h2>
+    <section>
+        <h2>Próximas Entregas: 14 Efectos por venir</h2>
         <div class="tetralogia-section">
-            <h3>Libro 2 - Tetralogía 2ª: Poderes Para el Profesorado</h3>
-            <ul>
-                <li>Efecto Vehemencia, Efecto Ovillo, Efecto Oratoria, Efecto Continente-Contenido.</li>
-            </ul>
-
-            <h3>Libro 3 - Tetralogía 3ª: Poderes Para el Centro Educativo</h3>
-            <ul>
-                <li>Efecto Gracias, Efecto Premio, Efecto Secundaria, Efecto Equipo, Efecto Habas.</li>
-            </ul>
-
-            <h3>Libro 4 - Tetralogía 4ª: Poderes Para la Sociedad</h3>
-            <ul>
-                <li>Efecto Donuts, Efecto Pasado, Efecto Juventud Acumulada, Efecto Sociedad, Efecto Empresa.</li>
-            </ul>
+            <p><strong>Libro 2: Poderes Para el Profesorado</strong><br>
+            Efecto Vehemencia, Efecto Ovillo, Efecto Oratoria, Efecto Continente-Contenido.</p>
+            
+            <p><strong>Libro 3: Poderes Para el Centro Educativo</strong><br>
+            Efecto Gracias, Efecto Premio, Efecto Secundaria, Efecto Equipo, Efecto Habas.</p>
+            
+            <p><strong>Libro 4: Poderes Para la Sociedad</strong><br>
+            Efecto Donuts, Efecto Pasado, Efecto Juventud Acumulada, Efecto Sociedad, Efecto Empresa.</p>
         </div>
     </section>
 
-    <div class="footer-content">
-        
-        <div class="portada-destacada">
-            <img src="portada.jpg" alt="Portada Poderes Para Aprender">
-            <p><strong>Libro I: Alumnos</strong></p>
-        </div>
-
-        <div class="autor-section">
-            <img src="cara..jpg" alt="Gregorio Gómez Pérez">
-            <div class="autor-texto">
-                <p><strong>Gregorio Gómez Pérez</strong>, Ingeniero Técnico Industrial y Funcionario de carrera del Cuerpo de Profesores de Educación Secundaria.</p>
-                <p><small>Con "Poderes para aprender", Gregorio inaugura una Tetralogía pensada para quienes creen que aprender es un camino que nunca termina.</small></p>
-            </div>
+    <div class="autor-section">
+        <img src="cara..jpg" alt="Gregorio Gómez Pérez">
+        <div class="autor-texto">
+            <h3>Sobre el Autor</h3>
+            <p><strong>Gregorio Gómez Pérez</strong>, Ingeniero Técnico Industrial y Funcionario de carrera del Cuerpo de Profesores de Educación Secundaria.</p>
+            <p>Con "Poderes para aprender", Gregorio inaugura una Tetralogía pensada para quienes creen que aprender es un camino que nunca termina.</p>
         </div>
     </div>
 
