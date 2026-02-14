@@ -3,299 +3,420 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Poderes Para Aprender - Gregorio Gómez Pérez</title>
+    <title>Pioneros del Genio Burgalés - IES Diego Marín Aguilera</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        :root {
-            --primary-dark: #2c3e50;
-            --secondary-gray: #7f8c8d;
-            --accent-red: #e74c3c;
-            --accent-red-hover: #c0392b;
-            --amazon-orange: #ff9900;
-            --amazon-orange-hover: #e68a00;
-            --libros-cc-blue: #2980b9;
-            --libros-cc-hover: #1f6391;
-            --bg-light: #f8f9fa;
-            --shadow: 0 4px 15px rgba(0,0,0,0.1);
-            --transition: all 0.3s ease;
-        }
-
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: var(--bg-light);
-        }
-
-        header {
-            text-align: center;
-            padding: 40px 20px;
-            background: var(--primary-dark);
-            color: white;
-            border-radius: 12px;
-            margin-bottom: 30px;
-            box-shadow: var(--shadow);
-        }
-
-        header h1 { margin: 0; font-size: 2.2em; }
-        header p { margin: 10px 0 0; opacity: 0.9; font-weight: 300; }
-
-        .container {
-            background: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: var(--shadow);
-        }
-
-        h2, h3 { 
-            color: var(--primary-dark); 
-            border-bottom: 2px solid #f1f1f1; 
-            padding-bottom: 12px; 
-            margin-top: 40px;
-        }
-
-        /* PORTADA Y ACCIONES */
-        .portada-superior {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .portada-superior img {
-            max-width: 380px;
-            width: 100%;
-            height: auto;
-            border-radius: 12px;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
-            margin-bottom: 20px;
-        }
-
-        /* CONTENEDOR DE BOTONES (CTA) */
-        .cta-group {
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 25px;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 12px 20px;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: var(--transition);
-            font-size: 0.9rem;
-            min-width: 200px;
-            text-align: center;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .btn:active { transform: translateY(0); }
-
-        .btn-editorial { background-color: var(--accent-red); }
-        .btn-editorial:hover { background-color: var(--accent-red-hover); }
-
-        .btn-amazon { background-color: var(--amazon-orange); }
-        .btn-amazon:hover { background-color: var(--amazon-orange-hover); }
-
-        .btn-libroscc { background-color: var(--libros-cc-blue); }
-        .btn-libroscc:hover { background-color: var(--libros-cc-hover); }
-
-        /* GRID DE EFECTOS */
-        .efectos-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
-            margin: 30px 0;
-        }
-
-        .efecto-card {
-            border: 1px solid #edf2f7;
-            padding: 20px;
-            border-radius: 10px;
-            background: #ffffff;
-            transition: var(--transition);
-        }
-
-        .efecto-card:hover { border-color: var(--libros-cc-blue); background: #fffcf9; }
-        .efecto-card h3 { margin-top: 0; font-size: 1.2em; border-bottom: none; color: var(--accent-red); }
-
-        .tetralogia-section {
-            background: #f8fafc;
-            padding: 25px;
-            border-radius: 10px;
-            border-left: 4px solid var(--primary-dark);
-            margin: 30px 0;
-        }
-
-        /* SECCIÓN DEL AUTOR */
-        .autor-section {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            background: #fdfdfd;
-            padding: 30px;
-            border-radius: 12px;
-            border: 1px solid #eee;
-            margin-top: 60px;
-        }
-
-        .autor-section img {
-            max-width: 150px;
-            border-radius: 50%;
-            border: 4px solid white;
-            box-shadow: var(--shadow);
-        }
-
-        .autor-texto { flex: 1; min-width: 280px; }
-
-        .contacto-links { margin-top: 20px; display: flex; gap: 10px; flex-wrap: wrap; }
-
-        .link-tecnico {
-            padding: 10px 18px;
-            background-color: var(--primary-dark);
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            font-size: 0.9em;
-            transition: var(--transition);
-        }
-
-        .link-tecnico:hover { opacity: 0.9; }
-
-        .footer-text {
-            text-align: center;
-            margin-top: 50px;
-            padding-bottom: 20px;
-            font-size: 0.9em;
-            color: var(--secondary-gray);
-        }
-
-        @media (max-width: 768px) {
-            .container { padding: 20px; }
-            .btn { width: 100%; min-width: unset; }
-            .autor-section { text-align: center; justify-content: center; }
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block !important; animation: fadeIn 0.4s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+        .projector-glow { box-shadow: 0 0 50px rgba(168, 85, 247, 0.4); }
+        .tabular-nums { font-variant-numeric: tabular-nums; }
     </style>
 </head>
-<body>
+<body class="bg-slate-50 min-h-screen p-2 md:p-6 lg:p-10">
 
-<header>
-    <h1>Poderes Para Aprender (P.P.A.)</h1>
-    <p>Innovación Educativa por Gregorio Gómez Pérez</p>
-</header>
+    <div id="reloj-profesional" class="fixed bottom-6 right-6 z-[100] bg-slate-900 text-white px-5 py-3 rounded-2xl shadow-2xl border border-slate-700 flex items-center gap-4 transition-all hover:scale-105 backdrop-blur-sm bg-opacity-95">
+        <div class="flex flex-col items-end">
+            <span class="text-[9px] uppercase tracking-[0.3em] text-blue-400 font-black">Hora Local</span>
+            <span id="txt-hora" class="text-2xl font-black tabular-nums">00:00:00</span>
+        </div>
+        <div class="w-1 h-8 bg-blue-500 rounded-full animate-pulse"></div>
+    </div>
 
-<div class="container">
-
-    <div class="portada-superior">
-        <!-- [Imagen de Portada Libro I] -->
-        <img src="portada.jpg" alt="Portada Libro I: Poderes Para Aprender">
-        <p><strong>Libro I: Alumnos - Gimnasia para tu cerebro</strong></p>
+    <div class="max-w-6xl mx-auto bg-white rounded-[40px] shadow-[0_35px_60px_-15px_rgba(0,0,0,0.15)] overflow-hidden border border-slate-200">
         
-        <div class="cta-group">
-            <a href="https://editorialcirculorojo.com/poderes-para-aprender/" 
-               target="_blank" 
-               rel="noopener noreferrer" 
-               class="btn btn-editorial">
-               Círculo Rojo
-            </a>
+        <nav class="flex bg-slate-900 text-white overflow-x-auto scrollbar-hide border-b-4 border-blue-600 sticky top-0 z-50">
+            <button onclick="showTab('inicio')" id="btn-inicio" class="nav-btn px-6 py-5 flex-1 whitespace-nowrap hover:bg-slate-800 transition-all uppercase text-[10px] font-black tracking-widest bg-blue-600 text-white">Inicio</button>
+            <button onclick="showTab('vuelo')" id="btn-vuelo" class="nav-btn px-6 py-5 flex-1 whitespace-nowrap hover:bg-slate-800 transition-all uppercase text-[10px] font-black tracking-widest text-white">Pioneros Vuelo</button>
+            <button onclick="showTab('cine')" id="btn-cine" class="nav-btn px-6 py-5 flex-1 whitespace-nowrap hover:bg-slate-800 transition-all uppercase text-[10px] font-black tracking-widest text-white">Pionero Cine</button>
+            <button onclick="showTab('tablas')" id="btn-tablas" class="nav-btn px-6 py-5 flex-1 whitespace-nowrap hover:bg-slate-800 transition-all uppercase text-[10px] font-black tracking-widest text-white">Comparativa</button>
+            <button onclick="showTab('debate')" id="btn-debate" class="nav-btn px-6 py-5 flex-1 whitespace-nowrap hover:bg-emerald-700 transition-all uppercase text-[10px] font-black tracking-widest text-emerald-300">Valores D.I.E.G.O.</button>
+            <button onclick="showTab('mariano-val')" id="btn-mariano-val" class="nav-btn px-6 py-5 flex-1 whitespace-nowrap hover:bg-purple-800 transition-all uppercase text-[10px] font-black tracking-widest text-purple-300">Valores M.A.R.I.A.N.O.</button>
+            <button onclick="showTab('reflexion')" id="btn-reflexion" class="nav-btn px-6 py-5 flex-1 whitespace-nowrap hover:bg-slate-800 transition-all uppercase text-[10px] font-black tracking-widest text-amber-400">Reflexión</button>
+        </nav>
 
-            <a href="https://libros.cc/Poderes-Para-Aprender-%E2%80%93-PPA-%E2%80%9CGimnasia-Para-tu-Cerebro%E2%80%9D.htm?isbn=9791370235192" 
-               target="_blank" 
-               rel="noopener noreferrer" 
-               class="btn btn-libroscc">
-               Comprar en Libros.cc
-            </a>
+        <div class="p-6 md:p-12 lg:p-16 min-h-[600px] bg-white relative">
             
-            <a href="https://www.amazon.es/dp/B0GLR3WBPG/" 
-               target="_blank" 
-               rel="noopener noreferrer" 
-               class="btn btn-amazon">
-               Comprar en Amazon
-            </a>
+            <div id="inicio" class="tab-content active space-y-8 text-center">
+                <div class="bg-blue-50 px-6 py-2 rounded-full border border-blue-100 inline-block">
+                    <p class="text-blue-600 font-bold text-[10px] tracking-widest uppercase">Jornadas Culturales "Diego Marín Aguilera"</p>
+                </div>
+                <h1 class="text-4xl md:text-6xl font-black text-slate-900 leading-none uppercase tracking-tighter">
+                    CONQUISTANDO EL <span class="text-blue-600 italic">CIELO</span> <br/> 
+                    Y EL <span class="text-purple-600 italic">CINE</span>
+                </h1>
+
+                <div class="py-6">
+                    <button onclick="document.getElementById('seccion-objetivo').scrollIntoView({behavior: 'smooth'})" 
+                            class="bg-red-600 hover:bg-red-700 text-white px-10 py-6 rounded-2xl font-black uppercase text-xl shadow-[0_20px_50px_rgba(220,38,38,0.3)] transition-all transform hover:scale-105 border-b-8 border-red-900">
+                        🎯 OBJETIVO DE ESTA EXPOSICIÓN
+                    </button>
+                </div>
+
+                <div style="text-align: center; margin: 20px 0;">
+                  <iframe 
+                    src="https://drive.google.com/file/d/1Irr1pswbq34RTQlpRw12Gu0GGpWcfIZc/preview" 
+                    width="640" 
+                    height="360" 
+                    allow="autoplay" 
+                    style="border: none; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+                  </iframe>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-12 max-w-4xl mx-auto">
+                    <div class="group">
+                        <div class="rounded-3xl overflow-hidden shadow-2xl border-4 border-white ring-1 ring-slate-200 transition-all">
+                            <img src="diego.jpg" alt="Diego Marín Aguilera" class="w-full h-80 object-cover bg-slate-100" onerror="this.src='https://via.placeholder.com/400x500?text=Diego+Marín'">
+                            <div class="bg-slate-900 text-white py-3 px-4 text-xs font-black uppercase tracking-widest">Diego Marín Aguilera</div>
+                        </div>
+                    </div>
+                    <div class="group">
+                        <div class="rounded-3xl overflow-hidden shadow-2xl border-4 border-white ring-1 ring-slate-200 transition-all">
+                            <img src="mariano.jpg" alt="Mariano Díez Tobar" class="w-full h-80 object-cover bg-slate-100" onerror="this.src='https://via.placeholder.com/400x500?text=Mariano+Díez'">
+                            <div class="bg-slate-900 text-white py-3 px-4 text-xs font-black uppercase tracking-widest">Mariano Díez Tobar</div>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-xl text-slate-500 font-medium leading-relaxed max-w-2xl mx-auto">Una exposición sobre el valor del <strong>esfuerzo</strong>, el <strong>trabajo</strong> y el respeto a nuestro entorno a través de dos genios burgaleses.</p>
+
+                <div id="seccion-objetivo" class="mt-20 pt-20 border-t-4 border-dashed border-slate-200 text-left space-y-12">
+                    <div class="bg-slate-900 text-white p-10 rounded-[3rem] shadow-2xl">
+                        <h2 class="text-3xl font-black uppercase italic mb-6">Misión: Aprovechar vuestro tiempo</h2>
+                        <p class="text-xl opacity-90 leading-relaxed font-medium">
+                            Utilizando a estos dos grandes inventores, queremos dejar claro a los alumnos de <strong>1º de ESO</strong> que el objetivo es motivarles para que <strong>aprovechen el tiempo</strong>. Es hora de bajar los ratios de incidencias y subir vuestra ambición académica.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start text-left">
+                        <div class="bg-white p-8 rounded-[2rem] shadow-xl border-2 border-red-100 w-full overflow-hidden">
+                            <h3 class="font-black text-slate-900 uppercase mb-6 flex items-center gap-2">📊 Datos Reales 1º ESO</h3>
+                            <div class="overflow-x-auto rounded-2xl border border-slate-200">
+                                <table class="w-full text-left text-sm">
+                                    <thead class="bg-slate-900 text-white font-black uppercase text-[10px]">
+                                        <tr><th class="p-4">Categoría</th><th class="p-4">Centro</th><th class="p-4 bg-red-600">Vuestro Grupo</th></tr>
+                                    </thead>
+                                    <tbody class="font-bold text-slate-700">
+                                        <tr class="border-b"><td>Alumnos</td><td class="p-4">      </td><td class="p-4 text-red-600">       </td></tr>
+                                        <tr class="border-b bg-red-50"><td>Incidencias</td><td class="p-4">    </td><td class="p-4 text-red-700 font-black">      ⚠️</td></tr>
+                                        <tr class="bg-slate-100"><td colspan="3" class="p-2 text-center text-[10px] uppercase font-black">Rendimiento Académico</td></tr>
+                                        <tr class="border-b"><td>    Todo Aprobado </td><td colspan="2" class="p-4 text-emerald-600 text-right">      </td></tr>
+                                        <tr class="border-b"><td>1 o 2 Suspensas</td><td colspan="2" class="p-4 text-blue-600 text-right">    </td></tr>
+                                        <tr class="bg-red-100"><td>+3 Suspensas</td><td colspan="2" class="p-4 text-red-700 text-right font-black italic">     (¡La mayoría!)</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="space-y-6">
+                            <div class="bg-purple-900 text-white p-8 rounded-[2.5rem] shadow-lg border-b-8 border-purple-950">
+                                <h4 class="font-black uppercase text-xl mb-4 flex items-center gap-3">
+                                    <span class="text-3xl">🤫</span> EL EFECTO CINE
+                                </h4>
+                                <p class="text-sm opacity-90 leading-relaxed mb-6 italic">
+                                    ¿Por qué en una sala de cine nadie grita? Porque todos han pagado por un tiempo que consideran <strong>valioso</strong>. Tu educación en el instituto cuesta mucho dinero y esfuerzo; es tu película, no dejes que nadie la arruine.
+                                </p>
+                                <div class="space-y-3">
+                                    <div class="flex items-start gap-3 bg-purple-800/50 p-3 rounded-xl border border-purple-700">
+                                        <span class="text-lg">👀</span>
+                                        <p class="text-xs font-bold uppercase tracking-tight">Mándale callar con la mirada: Si alguien interrumpe, mírale con firmeza. Hazle saber que te está robando tu tiempo.</p>
+                                    </div>
+                                    <div class="flex items-start gap-3 bg-purple-800/50 p-3 rounded-xl border border-purple-700">
+                                        <span class="text-lg">🚫</span>
+                                        <p class="text-xs font-bold uppercase tracking-tight">No te sumes al caos: Reírse de la gracia del que molesta es darle permiso para seguir. Sé tú el protagonista, no el público del payaso.</p>
+                                    </div>
+                                    <div class="flex items-start gap-3 bg-emerald-500/20 p-3 rounded-xl border border-emerald-500/50">
+                                        <span class="text-lg">💎</span>
+                                        <p class="text-xs font-bold uppercase tracking-tight text-emerald-300">Valora tu futuro: Cada minuto de ruido es un minuto menos que tienes para aprender el "secreto" que te hará libre.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-emerald-50 border-l-8 border-emerald-600 p-8 rounded-3xl">
+                                <h4 class="font-black text-emerald-900 uppercase">🎸 El Efecto Concierto</h4>
+                                <p class="text-sm text-slate-700 mt-2 italic">Disfrutas un concierto porque te sabes la canción. Si vienes a clase con la lección leída, <strong>no te aburrirás</strong> porque sabrás de qué trata el tema.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="vuelo" class="tab-content space-y-8">
+                <div class="flex items-center gap-4 border-b-4 border-blue-600 pb-4">
+                    <span class="text-4xl">🦅</span>
+                    <h2 class="text-3xl font-black text-slate-900 uppercase italic">El Sueño de Volar</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white p-8 rounded-3xl shadow-xl border-l-8 border-yellow-500 text-left">
+                        <h3 class="font-black text-2xl mb-4 text-yellow-700 uppercase">Diego Marín Aguilera (1757-1799)</h3>
+                        <p class="text-sm font-bold text-blue-600 mb-4 uppercase italic tracking-widest">Localidad: Coruña del Conde (Burgos)</p>
+                        <p class="text-slate-700 leading-relaxed font-medium mb-4">
+                            No fue casualidad. Dedicó <strong>6 años de observación</strong> a las aves rapaces. Analizó cómo movían sus alas para planear. Este pastor burgalés, con una mente científica adelantada a su tiempo, recolectó plumas de águilas y buitres para recubrir su estructura de madera de sauce y hierro forjado.
+                        </p>
+                        <div class="bg-yellow-50 p-4 rounded-xl border border-yellow-100 text-sm italic font-bold text-yellow-800 mb-4">
+                            "Construyó su propio aparato con hierro y plumas de águila. Logró volar 360 metros desde las peñas del castillo."
+                        </div>
+                        <p class="text-slate-700 leading-relaxed font-medium pt-4 border-t">
+                            <strong>El triste final:</strong> El 15 de mayo de 1793 realizó su proeza, pero tras aterrizar por la rotura de un perno, la ignorancia y el miedo de sus vecinos, alentados por la superstición, hicieron que <strong>quemaran su invento</strong>. Diego, destrozado por ver su obra en cenizas, murió de pena en 1799.
+                        </p>
+                    </div>
+                    <div class="bg-blue-900 text-white p-8 rounded-3xl flex flex-col justify-center shadow-lg">
+                        <h4 class="font-black text-blue-400 text-xs uppercase tracking-widest mb-2">Lección de Vida</h4>
+                        <p class="text-lg font-medium italic opacity-90 leading-relaxed">"El genio es 1% inspiración y 99% transpiración. Diego no se rindió ante las burlas; trabajó hasta que sus pies dejaron de tocar el suelo. Su legado es un valor que debemos proteger frente a la intolerancia."</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="cine" class="tab-content space-y-8">
+                <div class="flex items-center gap-4 border-b-4 border-purple-600 pb-4">
+                    <span class="text-4xl">🎞️</span>
+                    <h2 class="text-3xl font-black text-slate-900 uppercase italic">El Padre del Séptimo Arte</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white p-8 rounded-3xl shadow-xl border-l-8 border-purple-500 text-left">
+                        <h3 class="font-black text-2xl mb-4 text-purple-700 uppercase">Mariano Díez Tobar (1868-1926)</h3>
+                        <p class="text-sm font-bold text-purple-600 mb-4 uppercase italic tracking-widest">Localidad: Tardajos (Burgos)</p>
+                        <p class="text-slate-700 leading-relaxed font-medium mb-4">
+                            Sacerdote paúl y científico superdotado. En 1889, durante una conferencia en el colegio de Murguía, explicó técnicamente el secreto que permitiría el cine: la <strong>intermitencia</strong>. Este sistema hace que la película se detenga un instante frente a la luz para que el cerebro no vea imágenes borrosas.
+                        </p>
+                        <p class="text-slate-700 leading-relaxed font-medium mb-4">
+                            Cedió sus apuntes a A. Flamereau, quien fue el nexo con los hermanos Lumière. Además, fue un inventor imparable: creó el <strong>Logautógrafo</strong> (voz a texto), el <strong>Iconoscopio</strong> (precursor del televisor) y el Icocinéfono para dar sonido a las imágenes.
+                        </p>
+                        <div class="bg-purple-50 p-4 rounded-xl border border-purple-100 text-sm font-bold text-purple-800 italic mb-6">
+                            "Sus inventos fueron la semilla del cine y la televisión moderna, siempre desde la humildad y la generosidad burgalesa."
+                        </div>
+
+                        <div class="space-y-3">
+                            <a href="https://historia-hispanica.rah.es/biografias/14109-mariano-diez-tobar" 
+                               target="_blank" 
+                               rel="noopener noreferrer" 
+                               class="flex items-center justify-between bg-slate-900 hover:bg-slate-800 text-white px-6 py-4 rounded-2xl font-bold transition-all shadow-lg">
+                                <span class="text-sm uppercase tracking-tight">Real Academia de la Historia</span>
+                                <span class="text-[9px] bg-slate-700 px-2 py-1 rounded border border-slate-600">ACCESO WEB</span>
+                            </a>
+
+                            <a href="https://historia.nationalgeographic.com.es/a/mariano-diez-tobar-inventor-olvidado-cine_17162" 
+                               target="_blank" 
+                               rel="noopener noreferrer" 
+                               class="flex items-center justify-between bg-[#ffcf00] hover:bg-[#ffdd44] text-black px-6 py-4 rounded-2xl font-bold transition-all shadow-lg">
+                                <span class="text-sm uppercase tracking-tight">National Geographic</span>
+                                <span class="text-[9px] bg-black text-white px-2 py-1 rounded">ACCESO WEB</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="bg-slate-900 p-8 rounded-3xl text-center space-y-6">
+                        <div id="projector-screen" class="h-48 bg-white rounded-xl flex flex-col items-center justify-center text-7xl transition-all duration-100">📽️</div>
+                        <div class="flex flex-col items-center gap-4">
+                            <input type="range" id="fps-range" min="1" max="24" value="2" class="w-full accent-purple-500">
+                            <span id="fps-value" class="text-purple-400 font-mono text-xl font-bold">2 FPS</span>
+                            <button onclick="toggleProjector()" id="proj-btn" class="w-full bg-purple-600 px-8 py-3 rounded-full text-white font-black hover:bg-purple-500 transition-all uppercase text-xs">Simular Intermitencia</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tablas" class="tab-content space-y-12">
+                <div class="text-center">
+                    <h2 class="text-3xl font-black text-slate-900 uppercase tracking-tighter italic">Justicia Histórica: Los Datos</h2>
+                </div>
+                <div class="space-y-8 text-left">
+                    <div>
+                        <h3 class="text-xl font-black text-blue-600 italic uppercase mb-4">📍 El Cielo: Diego vs Wright</h3>
+                        <div class="overflow-x-auto rounded-3xl border shadow-xl">
+                            <table class="w-full text-left">
+                                <thead class="bg-blue-600 text-white font-black uppercase text-[10px]">
+                                    <tr><th class="p-6">Año</th><th class="p-6">Nombre</th><th class="p-6">Hazaña</th></tr>
+                                </thead>
+                                <tbody class="text-sm font-semibold italic">
+                                    <tr class="bg-blue-50 border-b">
+                                        <td class="p-6">1793</td><td class="p-6">Diego Marín Aguilera</td><td class="p-6">Vuelo documentado de 360m en Burgos. 110 años antes que los Wright.</td>
+                                    </tr>
+                                    <tr class="bg-white border-b">
+                                        <td class="p-6">1903</td><td class="p-6 italic">Hermanos Wright</td><td class="p-6 italic">Primer vuelo motorizado (260m).</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-black text-purple-600 italic uppercase mb-4">📍 El Cine: Mariano vs Lumière</h3>
+                        <div class="overflow-x-auto rounded-3xl border shadow-xl">
+                            <table class="w-full text-left">
+                                <thead class="bg-purple-600 text-white font-black uppercase text-[10px]">
+                                    <tr><th class="p-6">Año</th><th class="p-6">Nombre</th><th class="p-6">Hazaña</th></tr>
+                                </thead>
+                                <tbody class="text-sm font-semibold italic">
+                                    <tr class="bg-purple-50 border-b">
+                                        <td class="p-6">1889</td><td class="p-6">Mariano Díez Tobar</td><td class="p-6">Presentación del sistema de intermitencia y diseño del cinematógrafo.</td>
+                                    </tr>
+                                    <tr class="bg-white border-b">
+                                        <td class="p-6">1895</td><td class="p-6 italic">Hermanos Lumière</td><td class="p-6 italic">Primera proyección pública de pago.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="debate" class="tab-content space-y-8">
+                <div class="bg-emerald-600 text-white p-12 rounded-[3rem] text-center shadow-2xl">
+                    <h3 class="text-7xl font-black tracking-[0.2em] mb-10 text-emerald-300">D.I.E.G.O.</h3>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
+                    <div class="bg-emerald-50 p-8 rounded-3xl border-l-8 border-emerald-500 shadow-sm">
+                        <h4 class="font-black text-emerald-800 uppercase mb-2">D - Disciplina</h4>
+                        <p class="text-sm font-medium text-slate-600 italic">El rigor extremo que Diego aplicó durante 6 años de observación constante de las aves rapaces.</p>
+                    </div>
+                    <div class="bg-emerald-50 p-8 rounded-3xl border-l-8 border-emerald-500 shadow-sm">
+                        <h4 class="font-black text-emerald-800 uppercase mb-2">I - Ingenio</h4>
+                        <p class="text-sm font-medium text-slate-600 italic">La capacidad de crear un avión con materiales sencillos como madera y plumas, adelantándose a la ingeniería moderna.</p>
+                    </div>
+                    <div class="bg-emerald-50 p-8 rounded-3xl border-l-8 border-emerald-500 shadow-sm">
+                        <h4 class="font-black text-emerald-800 uppercase mb-2">E - Esfuerzo</h4>
+                        <p class="text-sm font-medium text-slate-600 italic">El trabajo incansable día tras día, a pesar de la falta de recursos y la incomprensión de los demás.</p>
+                    </div>
+                    <div class="bg-emerald-50 p-8 rounded-3xl border-l-8 border-emerald-500 shadow-sm">
+                        <h4 class="font-black text-emerald-800 uppercase mb-2">G - Gratitud</h4>
+                        <p class="text-sm font-medium text-slate-600 italic">Saber reconocer a quienes le ayudaron, como el herrero del pueblo que forjó las piezas clave del aparato.</p>
+                    </div>
+                    <div class="bg-emerald-50 p-8 rounded-3xl border-l-8 border-emerald-500 shadow-sm">
+                        <h4 class="font-black text-emerald-800 uppercase mb-2">O - Orden</h4>
+                        <p class="text-sm font-medium text-slate-600 italic">Seguir un método lógico de diseño y construcción, transformando la idea en una realidad tangible.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="mariano-val" class="tab-content space-y-8">
+                <div class="bg-purple-700 text-white p-12 rounded-[3rem] text-center shadow-2xl">
+                    <h3 class="text-7xl font-black tracking-[0.1em] mb-10 text-purple-300">MARIANO</h3>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
+                    <div class="bg-purple-50 p-8 rounded-3xl border-l-8 border-purple-500 shadow-sm">
+                        <h4 class="font-black text-purple-800 uppercase mb-2">M - Motivación</h4>
+                        <p class="text-sm font-medium text-slate-600 italic">La llama interna que le llevó a investigar campos tan variados como el cine, la medicina y el lenguaje.</p>
+                    </div>
+                    <div class="bg-purple-50 p-8 rounded-3xl border-l-8 border-purple-500 shadow-sm">
+                        <h4 class="font-black text-purple-800 uppercase mb-2">A - Autodidacta</h4>
+                        <p class="text-sm font-medium text-slate-600 italic">Su capacidad para aprender y resolver problemas complejos sin depender de grandes academias.</p>
+                    </div>
+                    <div class="bg-purple-50 p-8 rounded-3xl border-l-8 border-purple-500 shadow-sm">
+                        <h4 class="font-black text-purple-800 uppercase mb-2">R - Respeto</h4>
+                        <p class="text-sm font-medium text-slate-600 italic">La consideración hacia la ciencia y la generosidad al compartir sus hallazgos con el mundo.</p>
+                    </div>
+                    <div class="bg-purple-50 p-8 rounded-3xl border-l-8 border-purple-500 shadow-sm">
+                        <h4 class="font-black text-purple-800 uppercase mb-2">I - Ingenio</h4>
+                        <p class="text-sm font-medium text-slate-600 italic">La resolución magistral de la intermitencia, el "corazón" técnico del cinematógrafo.</p>
+                    </div>
+                    <div class="bg-purple-50 p-8 rounded-3xl border-l-8 border-purple-500 shadow-sm">
+                        <h4 class="font-black text-purple-800 uppercase mb-2">A - Ambición</h4>
+                        <p class="text-sm font-medium text-slate-600 italic">No conformarse con lo que existe, sino buscar siempre una mejora para la humanidad.</p>
+                    </div>
+                    <div class="bg-purple-50 p-8 rounded-3xl border-l-8 border-purple-500 shadow-sm">
+                        <h4 class="font-black text-purple-800 uppercase mb-2">N - Nobleza</h4>
+                        <p class="text-sm font-medium text-slate-600 italic">Su desinterés material al ceder sus planos más valiosos de forma gratuita.</p>
+                    </div>
+                    <div class="bg-purple-50 p-8 rounded-3xl border-l-8 border-purple-500 shadow-sm">
+                        <h4 class="font-black text-purple-800 uppercase mb-2">O - Observación</h4>
+                        <p class="text-sm font-medium text-slate-600 italic">Mirar el mundo con ojos curiosos para descubrir las leyes ocultas tras la luz y el movimiento.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="reflexion" class="tab-content space-y-10">
+                <div class="bg-white p-8 md:p-12 rounded-[3rem] shadow-xl border-2 border-slate-100 text-left">
+                    <h2 class="text-3xl font-black text-slate-900 uppercase italic mb-6">Reflexión Final sobre el Genio y la Sociedad</h2>
+                    <div class="bg-amber-50 p-8 rounded-2xl border-l-8 border-amber-500 mb-8">
+                        <p class="text-slate-800 leading-relaxed font-medium">
+                            El <strong>CIS 2016</strong> analiza cómo encuentran empleo los ciudadanos y sí recoge que la vía más frecuente es <strong>“a través de familiares o amigos”</strong> según sus barómetros y estudios de opinión. 
+                        </p>
+                    </div>
+                    <div class="space-y-6 text-slate-700 font-medium italic">
+                        <p>A partir de la historia de estos dos genios burgaleses, se nos plantean preguntas incómodas para el presente:</p>
+                        <ul class="list-disc pl-8 space-y-4">
+                            <li>¿Cómo cuida la sociedad actual a los "Diegos" y "Marianos" que hay en la actualidad? Aquellos que no tienen contactos pero sí un ingenio desbordante.</li>
+                            <li>¿Valora la sociedad la disciplina, el ingenio y el esfuerzo, valores de estos grandes genios, o seguimos atrapados en el valor de los amiguismos y enchufismos?</li>
+                            <li>¿Estamos permitiendo que el talento se pierda o "se queme" por la envidia o la falta de apoyo institucional y social?</li>
+                            <li>¿Qué podemos hacer nosotros como comunidad educativa para proteger y fomentar el genio autodidacta?</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
         </div>
+
+        <footer class="bg-slate-950 text-white p-10 flex flex-col md:flex-row justify-between items-center px-16 border-t-4 border-slate-800">
+            <div class="text-left">
+                <p class="text-xl font-black uppercase tracking-tighter italic">IES Diego Marín Aguilera</p>
+                <p class="text-[9px] text-slate-500 font-black uppercase tracking-[0.3em]">Burgos · Control y Robótica</p>
+            </div>
+            <div class="mt-6 md:mt-0 text-[10px] text-slate-600 font-black uppercase tracking-widest">Jornadas Culturales 2026</div>
+        </footer>
     </div>
 
-    <section>
-        <h2>Visión de la Tetralogía</h2>
-        <p>
-            Este ambicioso proyecto pedagógico se estructura sobre 20 palancas de cambio denominadas <strong>"efectos"</strong>, diseñadas para optimizar el ecosistema educativo desde cuatro pilares fundamentales.
-        </p>
-    </section>
+    <script>
+        function actualizarReloj() {
+            const elHora = document.getElementById('txt-hora');
+            const ahora = new Date();
+            const h = String(ahora.getHours()).padStart(2, '0');
+            const m = String(ahora.getMinutes()).padStart(2, '0');
+            const s = String(ahora.getSeconds()).padStart(2, '0');
+            elHora.textContent = `${h}:${m}:${s}`;
+        }
+        actualizarReloj();
+        setInterval(actualizarReloj, 1000);
 
-    <section>
-        <h2>Libro 1: Efectos para el Alumno</h2>
-        <div class="efectos-grid">
-            <div class="efecto-card">
-                <h3>1. Efecto Concierto</h3>
-                <p>Preparación estratégica previa para maximizar la asimilación del contenido en el aula.</p>
-            </div>
-            <div class="efecto-card">
-                <h3>2. Efecto Cine</h3>
-                <p>El silencio consciente como catalizador de la atención profunda y el respeto mutuo.</p>
-            </div>
-            <div class="efecto-card">
-                <h3>3. Efecto Periodista</h3>
-                <p>Transformación del alumno pasivo en un investigador proactivo que cuestiona y documenta.</p>
-            </div>
-            <div class="efecto-card">
-                <h3>4. Efecto Tiempo</h3>
-                <p>Optimización del rendimiento escolar mediante la metodología de productividad en clase.</p>
-            </div>
-            <div class="efecto-card">
-                <h3>5. Efecto Desayuno</h3>
-                <p>Fundamentos neurobiológicos: la nutrición como pilar de la capacidad cognitiva.</p>
-            </div>
-            <div class="efecto-card">
-                <h3>6. Efecto Tonto</h3>
-                <p>Análisis de la eficiencia: evitar el doble esfuerzo mediante el compromiso inmediato.</p>
-            </div>
-        </div>
-    </section>
+        function showTab(tabId) {
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            const buttons = document.querySelectorAll('.nav-btn');
+            buttons.forEach(btn => btn.classList.remove('bg-blue-600', 'bg-emerald-700', 'bg-purple-800'));
+            const currentTab = document.getElementById(tabId);
+            if (currentTab) currentTab.classList.add('active');
+            const currentBtn = document.getElementById('btn-' + tabId);
+            if (currentBtn) {
+                if(tabId === 'debate') currentBtn.classList.add('bg-emerald-700');
+                else if (tabId === 'mariano-val') currentBtn.classList.add('bg-purple-800');
+                else currentBtn.classList.add('bg-blue-600');
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
 
-    <section>
-        <h2>Hoja de Ruta del Proyecto</h2>
-        <div class="tetralogia-section">
-            <p><strong>Libro 2: Poderes Para el Profesorado</strong><br>
-            Foco en oratoria, gestión de aula y conexión emocional (Efecto Vehemencia, Efecto Oratoria).</p>
-            
-            <p><strong>Libro 3: Poderes Para el Centro Educativo</strong><br>
-            Cultura organizacional, meritocracia y trabajo en equipo (Efecto Equipo, Efecto Premio).</p>
-            
-            <p><strong>Libro 4: Poderes Para la Sociedad</strong><br>
-            Vinculación entre juventud, experiencia y sector empresarial (Efecto Empresa, Efecto Pasado).</p>
-        </div>
-    </section>
+        let isPlaying = false, interval, frame = 0;
+        const screen = document.getElementById('projector-screen');
+        const range = document.getElementById('fps-range');
+        const fpsVal = document.getElementById('fps-value');
+        const btnProj = document.getElementById('proj-btn');
 
-    <div class="autor-section">
-        <!-- [Imagen del Autor Gregorio Gómez Pérez] -->
-        <img src="cara..jpg" alt="Gregorio Gómez Pérez">
-        <div class="autor-texto">
-            <h3>Sobre el Autor</h3>
-            <p><strong>Gregorio Gómez Pérez</strong> es Ingeniero Técnico Industrial y funcionario de carrera del Cuerpo de Profesores de Educación Secundaria en la especialidad de Tecnología.</p>
-            <div class="contacto-links">
-                <a href="mailto:ggomezp@educa.jcyl.es" class="link-tecnico">Enviar Consulta</a>
-                <a href="https://editorialcirculorojo.com/poderes-para-aprender/" target="_blank" rel="noopener noreferrer" class="link-tecnico" style="background-color: var(--secondary-gray);">Ficha del Autor</a>
-            </div>
-        </div>
-    </div>
+        function toggleProjector() {
+            isPlaying = !isPlaying;
+            if (isPlaying) {
+                btnProj.textContent = "Detener Proyector";
+                btnProj.classList.replace('bg-purple-600', 'bg-red-600');
+                startInterval();
+            } else {
+                btnProj.textContent = "Simular Intermitencia";
+                btnProj.classList.replace('bg-red-600', 'bg-purple-600');
+                clearInterval(interval);
+                screen.style.opacity = "1";
+            }
+        }
 
-    <div class="footer-text">
-        <p>&copy; 2026 Gregorio Gómez Pérez - Todos los derechos reservados. <br> 
-        Diseñado bajo estándares de ingeniería de software profesional.</p>
-    </div>
-</div>
+        function startInterval() {
+            clearInterval(interval);
+            interval = setInterval(() => {
+                screen.style.opacity = (frame % 2 === 0) ? "0.1" : "1";
+                frame++;
+            }, 1000 / range.value);
+        }
 
+        range.addEventListener('input', () => {
+            fpsVal.textContent = range.value + " FPS";
+            if (isPlaying) startInterval();
+        });
+    </script>
 </body>
 </html>
