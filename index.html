@@ -15,7 +15,6 @@
             --shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
-        * { box-sizing: border-box; }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
@@ -28,7 +27,7 @@
 
         header {
             text-align: center;
-            padding: 40px 20px;
+            padding: 30px 0;
             background: var(--primary-color);
             color: white;
             border-radius: 8px;
@@ -44,157 +43,207 @@
 
         h1, h2, h3 { color: var(--primary-color); border-bottom: 2px solid #eee; padding-bottom: 10px; }
 
-        .portada-superior { text-align: center; margin-bottom: 40px; }
+        .portada-superior {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
         .portada-superior img {
             max-width: 400px;
             width: 100%;
+            height: auto;
             border-radius: 8px;
             box-shadow: 0 8px 20px rgba(0,0,0,0.2);
             margin-bottom: 15px;
         }
 
-        /* BOTONERA */
+        /* --- BOTONERA PRINCIPAL --- */
         .actions-container {
             display: flex;
-            gap: 12px;
+            gap: 15px;
             justify-content: center;
             flex-wrap: wrap;
-            margin: 25px 0;
+            margin-top: 25px;
         }
 
         .btn {
             display: inline-block;
-            padding: 12px 24px;
+            padding: 14px 28px;
             text-decoration: none;
             border-radius: 6px;
             font-weight: bold;
-            font-size: 0.9rem;
+            font-size: 1rem;
             transition: all 0.3s ease;
-            text-align: center;
-            min-width: 200px;
             cursor: pointer;
             border: none;
+            text-align: center;
+            min-width: 220px;
         }
 
-        .btn:hover { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
-        .btn-editorial { background-color: var(--accent-color); color: white; }
-        .btn-amazon { background-color: var(--amazon-color); color: #111; }
-        .btn-contacto { background-color: var(--primary-color); color: white; }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
 
-        /* ESTILOS VENTANA MODAL (CORREO) */
+        .btn-editorial { background-color: var(--accent-color); color: white !important; }
+        .btn-amazon { background-color: var(--amazon-color); color: black !important; }
+        .btn-contacto { background-color: var(--primary-color); color: white !important; }
+
+        /* --- VENTANA MODAL CORREO --- */
         .modal-overlay {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.7);
-            display: none; /* Oculto por defecto */
+            background: rgba(0,0,0,0.85);
+            display: none;
             justify-content: center;
             align-items: center;
-            z-index: 1000;
-            backdrop-filter: blur(4px);
+            z-index: 9999;
         }
-
         .modal-content {
             background: white;
-            padding: 30px;
-            border-radius: 12px;
+            padding: 40px;
+            border-radius: 15px;
             text-align: center;
-            max-width: 400px;
+            max-width: 500px;
             width: 90%;
-            position: relative;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
-
-        .modal-content h3 { border: none; margin-top: 0; }
-        .email-display {
-            font-size: 1.1rem;
-            color: var(--accent-color);
+        .email-box {
+            font-size: 1.2rem;
+            color: var(--primary-color);
             font-weight: bold;
-            background: #f1f1f1;
-            padding: 10px;
-            border-radius: 5px;
-            margin: 20px 0;
+            background: #f0f2f5;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border: 1px dashed var(--secondary-color);
             word-break: break-all;
         }
 
-        .close-modal {
-            background: var(--secondary-color);
-            color: white;
-            padding: 8px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            border: none;
-        }
-
-        /* GRID Y SECCIONES */
+        /* --- CONTENIDO --- */
         .efectos-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
             margin: 20px 0;
         }
-
-        .efecto-card { border: 1px solid #eee; padding: 20px; border-radius: 8px; }
-
+        .efecto-card {
+            border: 1px solid #e1e1e1;
+            padding: 15px;
+            border-radius: 8px;
+            background: #fff;
+        }
+        .tetralogia-section {
+            background: #f1f4f6;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
         .autor-section {
             display: flex;
             align-items: center;
             gap: 25px;
             flex-wrap: wrap;
-            background: #fafafa;
-            padding: 30px;
+            background: #fdfdfd;
+            padding: 25px;
             border-radius: 8px;
+            border-top: 2px solid #eee;
             margin-top: 50px;
         }
+        .autor-section img {
+            max-width: 160px;
+            border-radius: 10px;
+        }
+        .footer-text {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.85em;
+            color: #95a5a6;
+        }
+        strong { color: #2980b9; }
 
-        .autor-section img { max-width: 150px; border-radius: 50%; }
-
-        @media (max-width: 600px) { .btn { width: 100%; } }
+        @media (max-width: 600px) {
+            .btn { width: 100%; }
+        }
     </style>
 </head>
 <body>
 
 <header>
     <h1>Poderes Para Aprender (P.P.A.)</h1>
-    <p>La Primera Tetralogía Educativa</p>
+    <p>La Primera Tetralogía "Poderes Para Aprender"</p>
 </header>
 
 <div class="container">
 
     <div class="portada-superior">
-        <img src="portada.jpg" alt="Portada Libro">
+        <img src="portada.jpg" alt="Portada Poderes Para Aprender">
         <p><strong>Libro I: Alumnos - Gimnasia para tu cerebro</strong></p>
         
         <div class="actions-container">
             <a href="https://editorialcirculorojo.com/poderes-para-aprender/" target="_blank" rel="noopener" class="btn btn-editorial">Editorial Círculo Rojo</a>
+            
             <a href="https://www.amazon.es/dp/B0GLR3WBPG" target="_blank" rel="noopener" class="btn btn-amazon">Comprar en Amazon</a>
-            <button onclick="toggleModal()" class="btn btn-contacto">Contactar Autor</button>
+            
+            <button onclick="document.getElementById('emailModal').style.display='flex'" class="btn btn-contacto">Contactar Autor</button>
         </div>
     </div>
 
-    <div id="emailModal" class="modal-overlay" onclick="handleOutsideClick(event)">
-        <div class="modal-content">
-            <h3>Contacto Directo</h3>
-            <p>Puedes escribirnos a la siguiente dirección:</p>
-            <div class="email-display">libropoderesparaaprender@gmail.com</div>
-            <button onclick="toggleModal()" class="close-modal">Cerrar</button>
+    <div id="emailModal" class="modal-overlay" onclick="this.style.display='none'">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <h3 style="border:none">Contacto Directo</h3>
+            <p>Escríbenos para cualquier consulta o información:</p>
+            <div class="email-box">libropoderesparaaprender@gmail.com</div>
+            <button onclick="document.getElementById('emailModal').style.display='none'" class="btn btn-contacto">Cerrar</button>
         </div>
     </div>
 
     <section>
-        <h2>Libro 1: Efectos para el Alumno</h2>
+        <h2>El Comienzo de la Tetralogía</h2>
+        <p>Este proyecto nace con la misión de transformar el proceso de enseñanza y aprendizaje a través de 20 palancas de cambio denominadas "efectos". La obra se divide en cuatro libros fundamentales que completan esta visión integral:</p>
+    </section>
+
+    <section>
+        <h2>Libro 1: Efectos para el Alumno (Obra Actual)</h2>
         <div class="efectos-grid">
             <div class="efecto-card">
                 <h3>1. Efecto Concierto</h3>
-                <p>Preparación previa para maximizar el entendimiento de la lección.</p>
+                <p>La importancia de la preparación previa para disfrutar y entender mejor la lección.</p>
             </div>
             <div class="efecto-card">
                 <h3>2. Efecto Cine</h3>
-                <p>El silencio y el respeto como base de la atención plena.</p>
+                <p>El silencio y el respeto como herramientas de atención máxima en el aula.</p>
             </div>
             <div class="efecto-card">
                 <h3>3. Efecto Periodista</h3>
-                <p>Actitud proactiva: investigar y tomar notas con propósito.</p>
+                <p>Actitud proactiva: investigar, preguntar y tomar notas con intención.</p>
             </div>
+            <div class="efecto-card">
+                <h3>4. Efecto Tiempo</h3>
+                <p>Gestión eficiente de cada minuto. Aprovechar el tiempo en clase <strong>-Bi.s.a-</strong> la productividad y reduce el esfuerzo extra fuera de ella.</p>
+            </div>
+            <div class="efecto-card">
+                <h3>5. Efecto Desayuno</h3>
+                <p>La nutrición adecuada como combustible indispensable para el cerebro.</p>
+            </div>
+            <div class="efecto-card">
+                <h3>6. Efecto Tonto</h3>
+                <p>Evitar la ineficiencia de no trabajar en clase para tener que estudiar el doble después.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Próximas Entregas: 14 Efectos por venir</h2>
+        <div class="tetralogia-section">
+            <p><strong>Libro 2: Poderes Para el Profesorado</strong><br>
+            Efecto Vehemencia, Efecto Ovillo, Efecto Oratoria, Efecto Continente-Contenido.</p>
+            
+            <p><strong>Libro 3: Poderes Para el Centro Educativo</strong><br>
+            Efecto Gracias, Efecto Premio, Efecto Secundaria, Efecto Equipo, Efecto Habas.</p>
+            
+            <p><strong>Libro 4: Poderes Para la Sociedad</strong><br>
+            Efecto Donuts, Efecto Pasado, Efecto Juventud Acumulada, Efecto Sociedad, Efecto Empresa.</p>
         </div>
     </section>
 
@@ -202,7 +251,8 @@
         <img src="cara..jpg" alt="Gregorio Gómez Pérez">
         <div class="autor-texto">
             <h3>Sobre el Autor</h3>
-            <p><strong>Gregorio Gómez Pérez</strong>, Ingeniero Técnico Industrial y profesor de Tecnología.</p>
+            <p><strong>Gregorio Gómez Pérez</strong>, Ingeniero Técnico Industrial y funcionario de carrera del Cuerpo de Profesores de Educación Secundaria en la especialidad de Tecnología.</p>
+            <p>Con "Poderes para aprender", Gregorio inaugura una Tetralogía pensada para quienes creen que aprender es un camino que nunca termina.</p>
         </div>
     </div>
 
@@ -210,22 +260,6 @@
         <p>&copy; 2026 Gregorio Gómez Pérez - Todos los derechos reservados.</p>
     </div>
 </div>
-
-<script>
-    // Lógica para abrir/cerrar la ventana modal
-    function toggleModal() {
-        const modal = document.getElementById('emailModal');
-        const isVisible = modal.style.display === 'flex';
-        modal.style.display = isVisible ? 'none' : 'flex';
-    }
-
-    // Cerrar si se pulsa fuera de la caja blanca
-    function handleOutsideClick(event) {
-        if (event.target.id === 'emailModal') {
-            toggleModal();
-        }
-    }
-</script>
 
 </body>
 </html>
